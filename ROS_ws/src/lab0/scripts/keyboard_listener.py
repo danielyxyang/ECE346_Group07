@@ -2,6 +2,8 @@
 import rospy
 # TODO: Import the correct message type for subscribing and publishing
 # checkout the section 2.5.2 in lab0.pdf for example
+from geometry_msgs.msg import Twist
+from rc_control_msgs.msg import RCControl
 
 class ControlNode:
     '''
@@ -17,6 +19,8 @@ class ControlNode:
         '''
         TODO: Define your pubshiler and subscriber here
         '''
+        self.sub_cmd_vel = rospy.Subscriber("cmd_vel", Twist, self.callback)
+        self.pub_rc_control = rospy.Publisher("rc_control", RCControl, queue_size=10)
 
         rospy.spin()
         
@@ -30,7 +34,16 @@ class ControlNode:
            from the subscribed message
         2. You need to construct a RCControl message and publish it
         '''
-        pass
+        throttle = data.linear.x
+        steer = data.angular.z
+
+        print("Throttle: {}".format(throttle))
+        print("Steer:    {}".format(steer))
+
+        msg_rccontrol = RCControl(throttle=throttle, steer=steer)
+        print("RCControl: {}".format(msg_rccontrol))
+        self.pub_rc_control.publish(msg_rccontrol)
+        
 
 if __name__ == "__main__":
     talker = ControlNode()
