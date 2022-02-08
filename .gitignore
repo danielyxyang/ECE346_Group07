@@ -4,6 +4,7 @@ ROS_ws/src/CMakeLists.txt
 ROS_ws/.catkin_workspace
 .vscode
 */.vscode
+.git-credentials
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

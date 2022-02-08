@@ -14,7 +14,7 @@ class ControlNode:
     '''
     def __init__(self):
 
-        rospy.init_node("keyboard_control_listener", anonymous=True)
+        rospy.init_node("keyboard_listener", anonymous=True)
 
         '''
         TODO: Define your pubshiler and subscriber here
@@ -37,11 +37,10 @@ class ControlNode:
         throttle = data.linear.x
         steer = data.angular.z
 
-        print("Throttle: {}".format(throttle))
-        print("Steer:    {}".format(steer))
+        # rospy.loginfo("Throttle: {}".format(throttle))
+        # rospy.loginfo("Steer:    {}".format(steer))
 
         msg_rccontrol = RCControl(throttle=throttle, steer=steer)
-        print("RCControl: {}".format(msg_rccontrol))
         self.pub_rc_control.publish(msg_rccontrol)
         
 

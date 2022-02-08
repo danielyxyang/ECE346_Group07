@@ -8,8 +8,11 @@ import matplotlib.pyplot as plt
 # TODO: import the message type for the subscribed topic
 # Use '''rostopic type ''' as shown in the readme to determine
 # the proper type
+from geometry_msgs.msg import PoseStamped
 
 class PoseSubscriber:
+    MAX_LIST_SIZE = 200
+
     '''
     This class subscribes to the ros "/zed2/zed_node/pose" topic, and 
     save the most recent 200 position [x,y] in to lists
@@ -34,6 +37,25 @@ class PoseSubscriber:
         Hint 2: You can do  self.x_traj.pop(0) to pop the first node in the list
         in order to maintain the maximum list size.
         '''
+        rospy.init_node("pose_node", anonymous=True)
+
+        self.sub_pose = rospy.Subscriber("/zed2/zed_node/pose", PoseStamped, self.callback)
+
+    def callback(self, data):
+        self.lock.acquire()
+
+        if len(self.x_traj) != len(self.y_traj):
+            self.x_traj.clear()
+            self.y_traj.clear()
+        
+        while len(self.x_traj) > self.MAX_LIST_SIZE:
+            self.x_traj.pop(0)
+            self.y_traj.pop(0)
+        
+        self.x_traj.append(data.pose.position.x)
+        self.y_traj.append(data.pose.position.y)
+
+        self.lock.release()
  
 if __name__ == "__main__":
     listener = PoseSubscriber()
