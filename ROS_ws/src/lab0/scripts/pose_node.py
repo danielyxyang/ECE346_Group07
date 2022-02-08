@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 # the proper type
 from geometry_msgs.msg import PoseStamped
 
-class PoseSubscriber:
-    MAX_LIST_SIZE = 200
+MAX_LIST_SIZE = 200
 
+class PoseSubscriber:
     '''
     This class subscribes to the ros "/zed2/zed_node/pose" topic, and 
     save the most recent 200 position [x,y] in to lists
@@ -48,7 +48,7 @@ class PoseSubscriber:
             self.x_traj.clear()
             self.y_traj.clear()
         
-        while len(self.x_traj) > self.MAX_LIST_SIZE:
+        while len(self.x_traj) > MAX_LIST_SIZE - 1:
             self.x_traj.pop(0)
             self.y_traj.pop(0)
         

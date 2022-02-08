@@ -34,13 +34,7 @@ class ControlNode:
            from the subscribed message
         2. You need to construct a RCControl message and publish it
         '''
-        throttle = data.linear.x
-        steer = data.angular.z
-
-        # rospy.loginfo("Throttle: {}".format(throttle))
-        # rospy.loginfo("Steer:    {}".format(steer))
-
-        msg_rccontrol = RCControl(throttle=throttle, steer=steer)
+        msg_rccontrol = RCControl(throttle=data.linear.x, steer=data.angular.z)
         self.pub_rc_control.publish(msg_rccontrol)
         
 
