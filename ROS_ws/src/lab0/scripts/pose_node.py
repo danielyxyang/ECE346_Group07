@@ -4,7 +4,7 @@ import rospy
 from IPython import display
 from threading import Lock
 import matplotlib.pyplot as plt
-from geometry_msgs.msg import Pose
+from geometry_msgs.msg import PoseStamped
 
 # TODO: import the message type for the subscribed topic
 # Use '''rostopic type ''' as shown in the readme to determine
@@ -17,12 +17,13 @@ class PoseSubscriber:
 
     '''
     def __init__(self):
+        rospy.init_node('pose_node', anonymous=True)
         self.MAX = 200
         self.x_traj = []
         self.y_traj = []
         # Lock to avoid thread race
         self.lock = Lock()
-        rospy.Subscriber('/cmd_pose', Pose, self.callback)
+        rospy.Subscriber('/zed2/zed_node/pose', PoseStamped, self.callback)
 
         '''
         TODO: Here you need to finish the rest of your subscriber class
@@ -41,8 +42,8 @@ class PoseSubscriber:
     
     def callback(self, data):
         self.lock.acquire()
-        self.x_traj.append(data.position.x)
-        self.y_traj.append(data.position.y)
+        self.x_traj.append(data.pose.position.x)
+        self.y_traj.append(data.pose.position.y)
 
         if len(self.x_traj) > self.MAX:
             self.x_traj.pop(0)
