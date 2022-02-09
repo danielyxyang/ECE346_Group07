@@ -4,6 +4,8 @@ from geometry_msgs.msg import Twist
 from rc_control_msgs.msg import RCControl
 # TODO: Import the correct message type for subscribing and publishing
 # checkout the section 2.5.2 in lab0.pdf for example
+from geometry_msgs.msg import Twist
+from rc_control_msgs.msg import RCControl
 
 class ControlNode:
     '''

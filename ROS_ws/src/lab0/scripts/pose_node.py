@@ -9,6 +9,7 @@ from geometry_msgs.msg import PoseStamped
 # TODO: import the message type for the subscribed topic
 # Use '''rostopic type ''' as shown in the readme to determine
 # the proper type
+from geometry_msgs.msg import PoseStamped
 
 class PoseSubscriber:
     '''
