@@ -3,16 +3,16 @@
 ## Task 1: Simulation Results
 
 ### A. Tuning of iLQR parameters
-\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark
+\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v&emsp;|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 -| - |-|-|-|-|-| - |-|-|-|-| - |-|-|-|-| - |-|-|-| - |-|-
 base| \| |4|30|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.891|*initial configuration (bypasses with 0.5)*
 A1| \| |4|30|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |**1.5**|**16**|50| \| |24.998|*bypasses with 0.35, almost gets stuck*
 
-<figure><img src="results_task1/base_snap.png" alt="base"><figcaption>base</figcaption></figure>
-<figure><img src="results_task1/A1_snap.png" alt="A1"><figcaption>A1</figcaption></figure>
+base: <img src="results_task1/base_snap.png" alt="base">
+A1: <img src="results_task1/A1_snap.png" alt="A1">
 
 ### B. Tuning of weights in cost
-\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark
+\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v&emsp;|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 -| - |-|-|-|-|-| - |-|-|-|-| - |-|-|-|-| - |-|-|-| - |-|-
 base| \| |4|30|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.891|*initial configuration (bypasses with 0.5)*
 B1| \| |**10**|30|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |16.382|*bypasses with 0.7*
@@ -21,26 +21,27 @@ B3| \| |4|**15**|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|5
 B4*| \| |4|30|**4**|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |11.153|*brakes shortly, bypasses with 1.0*
 B5| \| |4|30|0|**0**|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |16.059|*bypasses with 0.5, stays at slow speed a bit shorter*
 
-<figure><img src="results_task1/base_snap.png" alt="base"><figcaption>base</figcaption></figure>
-<figure><img src="results_task1/B1_snap.png" alt="B1"><figcaption>B1</figcaption></figure>
-<figure><img src="results_task1/B2_snap.png" alt="B2"><figcaption>B2</figcaption></figure>
-<figure><img src="results_task1/B3_snap.png" alt="B3"><figcaption>B3</figcaption></figure>
-<figure><img src="results_task1/B4_snap.png" alt="B4"><figcaption>B4</figcaption></figure>
-<figure><img src="results_task1/B5_snap.png" alt="B5"><figcaption>B5</figcaption></figure>
+base: <img src="results_task1/base_snap.png" alt="base">
+B1: <img src="results_task1/B1_snap.png" alt="B1">
+B2: <img src="results_task1/B2_snap.png" alt="B2">
+
+B3: <img src="results_task1/B3_snap.png" alt="B3">
+B4: <img src="results_task1/B4_snap.png" alt="B4">
+B5: <img src="results_task1/B5_snap.png" alt="B5">
 
 ### C. Tuning of weights in soft constraint
-\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark
+\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v&emsp;|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 -| - |-|-|-|-|-| - |-|-|-|-| - |-|-|-|-| - |-|-|-| - |-|-
 base| \| |4|30|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.891|*initial configuration (bypasses with 0.5)*
 C1| \| |4|30|0|0.1|0.1| \| |0 / 0|**1 / 4**|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |19.007|*bypasses with 0.5, cuts the curves a bit*
 C2| \| |4|30|0|0.1|0.1| \| |0 / 0|2 / 5|**1 / 4**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |18.553|*bypasses with 0.7, comes very close to obstacle*
 
-<figure><img src="results_task1/base_snap.png" alt="base"><figcaption>base</figcaption></figure>
-<figure><img src="results_task1/C1_snap.png" alt="C1"><figcaption>C1</figcaption></figure>
-<figure><img src="results_task1/C2_snap.png" alt="C2"><figcaption>C2</figcaption></figure>
+base: <img src="results_task1/base_snap.png" alt="base">
+C1: <img src="results_task1/C1_snap.png" alt="C1">
+C2: <img src="results_task1/C2_snap.png" alt="C2">
 
 ### D. Joint tuning
-\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark
+\#| \| |w_vel|w_contour|w_theta|w_accel|w_delta| \| |q_v&emsp;|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 -| - |-|-|-|-|-| - |-|-|-|-| - |-|-|-|-| - |-|-|-| - |-|-
 base| \| |4|30|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.891|*initial configuration (bypasses with 0.5)*
 D1| \| |**10**|30|0|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \| |**1.5**|**16**|50| \| |25.303|*brakes down to 0.6, bypasses with 0.9*
@@ -50,13 +51,14 @@ D4| \| |**10**|**60**|**4**|0.1|0.1| \| |0 / 0|2 / 5|2 / 5|1 / 5| \| |0|0|0|0| \
 D5*| \| |**10**|**60**|**4**|0.1|0.1| \| |0 / 0|2 / 5|**3 / 5.5**|1 / 5| \| |0|0|0|0| \| |**1.5**|**16**|50| \| |13.144|*brakes shortly, bypasses with 1, drives well in lane, keeps distance to obstacle*
 D6*| \| |**10**|**60**|**4**|0.1|0.1| \| |0 / 0|2 / 5|**3 / 5.5**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |10.842|*brakes down to 0.8, bypasses with 1, drives well in lane, keeps distance to obstacle*
 
-<figure><img src="results_task1/base.png" width="200" height="200" alt="base"><figcaption>base</figcaption></figure>
-<figure><img src="results_task1/D1.png" width="200" height="200" alt="D1"><figcaption>D1</figcaption></figure>
-<figure><img src="results_task1/D2.png" width="200" height="200" alt="D2"><figcaption>D2</figcaption></figure>
-<figure><img src="results_task1/D3.png" width="200" height="200" alt="D3"><figcaption>D3</figcaption></figure>
-<figure><img src="results_task1/D4.png" width="200" height="200" alt="D4"><figcaption>D4</figcaption></figure>
-<figure><img src="results_task1/D5.png" width="200" height="200" alt="D5"><figcaption>D5</figcaption></figure>
-<figure><img src="results_task1/D6.png" width="200" height="200" alt="D6"><figcaption>D6</figcaption></figure>
+base: <img src="results_task1/base.png" width="200" height="200" alt="base">
+D1: <img src="results_task1/D1.png" width="200" height="200" alt="D1">
+D2: <img src="results_task1/D2.png" width="200" height="200" alt="D2">
+D3: <img src="results_task1/D3.png" width="200" height="200" alt="D3">
+
+D4: <img src="results_task1/D4.png" width="200" height="200" alt="D4">
+D5: <img src="results_task1/D5.png" width="200" height="200" alt="D5">
+D6: <img src="results_task1/D6.png" width="200" height="200" alt="D6">
 
 ### Discussion
 - `w_vel = 10` and `w_theta = 4`: provides incentives for the truck to be close to its maximum velocity and to increase its lap progress.
@@ -80,7 +82,7 @@ To describe the performance of our trajectory, we use the following terms to ref
 *Note: Since the nominal trajectory of the other truck (task 1, experiment D6) only consists of `N = 11` planned states with a time horizon of `T = 1`, we have to use the same iLQR parameters for the planning of our truck.*
 
 ### B. Tuning of weights in cost
-\#| \| |w_vel|w_countour|w_theta|w_accel|w_delta| \| |q_v|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark
+\#| \| |w_vel|w_countour|w_theta|w_accel|w_delta| \| |q_v&emsp;|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 -| - |-|-|-|-|-| - |-|-|-|-| - |-|-|-|-| - |-|-|-| - |-|-
 base| \| |4|40|0|0.1|0.1| \| |0 / 0|5 / 10|5 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |13.828|*initial configuration (prep stable, init less stable, overtakes with 1.9)*
 B1| \| |**8**|40|0|0.1|0.1| \| |0 / 0|5 / 10|5 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |10.876|*prep instable, init stable, overtakes with 1.8*
@@ -94,20 +96,25 @@ B6b| \| |**6**|**20**|**2**|0.1|0.1| \| |0 / 0|5 / 10|5 / 5|1 / 5| \| |0|0|0|0| 
 B7*| \| |**6**|40|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|5 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.334|*prep stable, init stable, overtakes with 1.9*
 B7b| \| |**6**|**20**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|5 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |19.273|*?*
 
-<figure><img src="results_task2/base.png" width="200" height="200" alt="base"><img src="results_task2/base_plan_snap.gif" width="200" height="200" alt="base_plan"><figcaption>base</figcaption></figure>
-<figure><img src="results_task2/B1.png" width="200" height="200" alt="B1"><img src="results_task2/B1_plan_snap.gif" width="200" height="200" alt="B1_plan"><figcaption>B1</figcaption></figure>
-<figure><img src="results_task2/B2a.png" width="200" height="200" alt="B2a"><img src="results_task2/B2a_plan_snap.gif" width="200" height="200" alt="B2a_plan"><figcaption>B2a</figcaption></figure>
-<figure><img src="results_task2/B2b.png" width="200" height="200" alt="B2b"><img src="results_task2/B2b_plan_snap.gif" width="200" height="200" alt="B2b_plan"><figcaption>B2b</figcaption></figure>
-<figure><img src="results_task2/B3.png" width="200" height="200" alt="B3"><img src="results_task2/B3_plan_snap.gif" width="200" height="200" alt="B3_plan"><figcaption>B3</figcaption></figure>
-<figure><img src="results_task2/B4.png" width="200" height="200" alt="B4"><img src="results_task2/B4_plan_snap.gif" width="200" height="200" alt="B4_plan"><figcaption>B4</figcaption></figure>
-<figure><img src="results_task2/B5.png" width="200" height="200" alt="B5"><img src="results_task2/B5_plan_snap.gif" width="200" height="200" alt="B5_plan"><figcaption>B5</figcaption></figure>
-<figure><img src="results_task2/B6.png" width="200" height="200" alt="B6"><img src="results_task2/B6_plan_snap.gif" width="200" height="200" alt="B6_plan"><figcaption>B6</figcaption></figure>
-<figure><img src="results_task2/B6b.png" width="200" height="200" alt="B6b"><img src="results_task2/B6b_plan_snap.gif" width="200" height="200" alt="B6b_plan"><figcaption>B6b</figcaption></figure>
-<figure><img src="results_task2/B7.png" width="200" height="200" alt="B7"><img src="results_task2/B7_plan_snap.gif" width="200" height="200" alt="B7_plan"><figcaption>B7</figcaption></figure>
-<figure><img src="results_task2/B7b.png" width="200" height="200" alt="B7b"><img src="results_task2/B7b_plan_snap.gif" width="200" height="200" alt="B7b_plan"><figcaption>B7b</figcaption></figure>
+base: <img src="results_task2/base.png" width="200" height="200" alt="base"><img src="results_task2/base_plan_snap.gif" width="200" height="200" alt="base_plan">
+B1: <img src="results_task2/B1.png" width="200" height="200" alt="B1"><img src="results_task2/B1_plan_snap.gif" width="200" height="200" alt="B1_plan">
+
+B2a: <img src="results_task2/B2a.png" width="200" height="200" alt="B2a"><img src="results_task2/B2a_plan_snap.gif" width="200" height="200" alt="B2a_plan">
+B2b: <img src="results_task2/B2b.png" width="200" height="200" alt="B2b"><img src="results_task2/B2b_plan_snap.gif" width="200" height="200" alt="B2b_plan">
+
+B3: <img src="results_task2/B3.png" width="200" height="200" alt="B3"><img src="results_task2/B3_plan_snap.gif" width="200" height="200" alt="B3_plan">
+B4: <img src="results_task2/B4.png" width="200" height="200" alt="B4"><img src="results_task2/B4_plan_snap.gif" width="200" height="200" alt="B4_plan">
+
+B5: <img src="results_task2/B5.png" width="200" height="200" alt="B5"><img src="results_task2/B5_plan_snap.gif" width="200" height="200" alt="B5_plan">
+B6: <img src="results_task2/B6.png" width="200" height="200" alt="B6"><img src="results_task2/B6_plan_snap.gif" width="200" height="200" alt="B6_plan">
+
+B6b: <img src="results_task2/B6b.png" width="200" height="200" alt="B6b"><img src="results_task2/B6b_plan_snap.gif" width="200" height="200" alt="B6b_plan">
+B7: <img src="results_task2/B7.png" width="200" height="200" alt="B7"><img src="results_task2/B7_plan_snap.gif" width="200" height="200" alt="B7_plan">
+
+B7b: <img src="results_task2/B7b.png" width="200" height="200" alt="B7b"><img src="results_task2/B7b_plan_snap.gif" width="200" height="200" alt="B7b_plan">
 
 ### C. Tuning of weights in soft constraint
-\#| \| |w_vel|w_countour|w_theta|w_accel|w_delta| \| |q_v|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark
+\#| \| |w_vel|w_countour|w_theta|w_accel|w_delta| \| |q_v&emsp;|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 -| - |-|-|-|-|-| - |-|-|-|-| - |-|-|-|-| - |-|-|-| - |-|-
 base| \| |4|40|0|0.1|0.1| \| |0 / 0|5 / 10|5 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |13.828|*initial configuration (prep stable, init less stable, overtakes with 1.9)*
 C1| \| |4|40|0|0.1|0.1| \| |0 / 0|**3 / 10**|5 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |9.121|*prep stable, init less stable, overtakes with 1.9, bumps into track border few times*
@@ -116,15 +123,17 @@ C3*| \| |4|40|0|0.1|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|0|0|0| \| |1|11
 C4| \| |4|40|0|0.1|0.1| \| |0 / 0|5 / 10|**5 / 10**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |11.291|*prep stable, init less stable, overtakes with 1.8*
 C5| \| |4|40|0|0.1|0.1| \| |0 / 0|**5 / 5**|**5 / 5**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |10.296|*prep instable, init instable, overtakes with 1.8, drives close to track border*
 
-<figure><img src="results_task2/base.png" width="200" height="200" alt="base"><img src="results_task2/base_plan_snap.gif" width="200" height="200" alt="base_plan"><figcaption>base</figcaption></figure>
-<figure><img src="results_task2/C1.png" width="200" height="200" alt="C1"><img src="results_task2/C1_plan_snap.gif" width="200" height="200" alt="C1_plan"><figcaption>C1</figcaption></figure>
-<figure><img src="results_task2/C2.png" width="200" height="200" alt="C2"><img src="results_task2/C2_plan_snap.gif" width="200" height="200" alt="C2_plan"><figcaption>C2</figcaption></figure>
-<figure><img src="results_task2/C3.png" width="200" height="200" alt="C3"><img src="results_task2/C3_plan_snap.gif" width="200" height="200" alt="C3_plan"><figcaption>C3</figcaption></figure>
-<figure><img src="results_task2/C4.png" width="200" height="200" alt="C4"><img src="results_task2/C4_plan_snap.gif" width="200" height="200" alt="C4_plan"><figcaption>C4</figcaption></figure>
-<figure><img src="results_task2/C5.png" width="200" height="200" alt="C5"><img src="results_task2/C5_plan_snap.gif" width="200" height="200" alt="C5_plan"><figcaption>C5</figcaption></figure>
+base: <img src="results_task2/base.png" width="200" height="200" alt="base"><img src="results_task2/base_plan_snap.gif" width="200" height="200" alt="base_plan">
+C1: <img src="results_task2/C1.png" width="200" height="200" alt="C1"><img src="results_task2/C1_plan_snap.gif" width="200" height="200" alt="C1_plan">
+
+C2: <img src="results_task2/C2.png" width="200" height="200" alt="C2"><img src="results_task2/C2_plan_snap.gif" width="200" height="200" alt="C2_plan">
+C3: <img src="results_task2/C3.png" width="200" height="200" alt="C3"><img src="results_task2/C3_plan_snap.gif" width="200" height="200" alt="C3_plan">
+
+C4: <img src="results_task2/C4.png" width="200" height="200" alt="C4"><img src="results_task2/C4_plan_snap.gif" width="200" height="200" alt="C4_plan">
+C5: <img src="results_task2/C5.png" width="200" height="200" alt="C5"><img src="results_task2/C5_plan_snap.gif" width="200" height="200" alt="C5_plan">
 
 ### D. Joint tuning
-\#| \| |w_vel|w_countour|w_theta|w_accel|w_delta| \| |q_v|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark
+\#| \| |w_vel|w_countour|w_theta|w_accel|w_delta| \| |q_v&emsp;|q_road|q_obstacle|q_lat| \| |sig_x|sig_y|sig_v|sig_theta| \| |T|N|max_itr| \| |comp_time|remark&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 -| - |-|-|-|-|-| - |-|-|-|-| - |-|-|-|-| - |-|-|-| - |-|-
 base| \| |4|40|0|0.1|0.1| \| |0 / 0|5 / 10|5 / 5|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |13.828|*initial configuration (prep stable, init less stable, overtakes with 1.9)*
 D1| \| |**8**|40|0|0.1|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |11.291|*?*
@@ -137,16 +146,20 @@ D7| \| |**3**|**30**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|
 D8| \| |**4**|**30**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |16.652|*prep stable, init stable, overtakes with 1.85, touches other truck and track border very shortly*
 D9*| \| |**4**|**35**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.748|*prep stable, init stable, overtakes with 1.75, does not touch other truck and track border*
 
-<figure><img src="results_task2/base.png" width="200" height="200" alt="base"><img src="results_task2/base_plan_snap.gif" width="200" height="200" alt="base_plan"><figcaption>base</figcaption></figure>
-<figure><img src="results_task2/D1.png" width="200" height="200" alt="D1"><img src="results_task2/D1_plan_snap.gif" width="200" height="200" alt="D1_plan"><figcaption>D1</figcaption></figure>
-<figure><img src="results_task2/D2.png" width="200" height="200" alt="D2"><img src="results_task2/D2_plan_snap.gif" width="200" height="200" alt="D2_plan"><figcaption>D2</figcaption></figure>
-<figure><img src="results_task2/D3.png" width="200" height="200" alt="D3"><img src="results_task2/D3_plan_snap.gif" width="200" height="200" alt="D3_plan"><figcaption>D3</figcaption></figure>
-<figure><img src="results_task2/D4.png" width="200" height="200" alt="D4"><img src="results_task2/D4_plan_snap.gif" width="200" height="200" alt="D4_plan"><figcaption>D4</figcaption></figure>
-<figure><img src="results_task2/D5.png" width="200" height="200" alt="D5"><img src="results_task2/D5_plan_snap.gif" width="200" height="200" alt="D5_plan"><figcaption>D5</figcaption></figure>
-<figure><img src="results_task2/D6.png" width="200" height="200" alt="D6"><img src="results_task2/D6_plan_snap.gif" width="200" height="200" alt="D6_plan"><figcaption>D6</figcaption></figure>
-<figure><img src="results_task2/D7.png" width="200" height="200" alt="D7"><img src="results_task2/D7_plan_snap.gif" width="200" height="200" alt="D7_plan"><figcaption>D7</figcaption></figure>
-<figure><img src="results_task2/D8.png" width="200" height="200" alt="D8"><img src="results_task2/D8_plan_snap.gif" width="200" height="200" alt="D8_plan"><figcaption>D8</figcaption></figure>
-<figure><img src="results_task2/D9.png" width="200" height="200" alt="D9"><img src="results_task2/D9_plan_snap.gif" width="200" height="200" alt="D9_plan"><figcaption>D9</figcaption></figure>
+base: <img src="results_task2/base.png" width="200" height="200" alt="base"><img src="results_task2/base_plan_snap.gif" width="200" height="200" alt="base_plan">
+D1: <img src="results_task2/D1.png" width="200" height="200" alt="D1"><img src="results_task2/D1_plan_snap.gif" width="200" height="200" alt="D1_plan">
+
+D2: <img src="results_task2/D2.png" width="200" height="200" alt="D2"><img src="results_task2/D2_plan_snap.gif" width="200" height="200" alt="D2_plan">
+D3: <img src="results_task2/D3.png" width="200" height="200" alt="D3"><img src="results_task2/D3_plan_snap.gif" width="200" height="200" alt="D3_plan">
+
+D4: <img src="results_task2/D4.png" width="200" height="200" alt="D4"><img src="results_task2/D4_plan_snap.gif" width="200" height="200" alt="D4_plan">
+D5: <img src="results_task2/D5.png" width="200" height="200" alt="D5"><img src="results_task2/D5_plan_snap.gif" width="200" height="200" alt="D5_plan">
+
+D6: <img src="results_task2/D6.png" width="200" height="200" alt="D6"><img src="results_task2/D6_plan_snap.gif" width="200" height="200" alt="D6_plan">
+D7: <img src="results_task2/D7.png" width="200" height="200" alt="D7"><img src="results_task2/D7_plan_snap.gif" width="200" height="200" alt="D7_plan">
+
+D8: <img src="results_task2/D8.png" width="200" height="200" alt="D8"><img src="results_task2/D8_plan_snap.gif" width="200" height="200" alt="D8_plan">
+D9: <img src="results_task2/D9.png" width="200" height="200" alt="D9"><img src="results_task2/D9_plan_snap.gif" width="200" height="200" alt="D9_plan">
 
 ### Discussion
 - `w_vel` and `w_theta` larger --> provides incentive for the truck to overtake the other truck (by allowing higher speeds), might regularize cost landscape to more efficient trajectories
@@ -168,25 +181,14 @@ To analyze the generalization ability of the tuned parameters, we make the follo
 
 We observed that providing less incentive for overtaking the other truck (i.e. smaller `w_vel` and `w_theta`) to ensure a safer overtaking maneuver introduces major problems when overtaking from the right track instead of center line. One possible reason is the increased deviation from the reference line required for the overtaking maneuver, which increases the cost by `30 * 0.15 = 4.5`. To address this problem, one can use hybrid systems, which uses a the center line as reference track only for the overtaking maneuver.
 
-<figure><img src="results_task2/E1a.png" width="200" height="200" alt="E1a"><img src="results_task2/E1a_plan.gif" width="200" height="200" alt="E1a_plan"><figcaption>E1a</figcaption></figure>
-<figure><img src="results_task2/E1b.png" width="200" height="200" alt="E1b"><img src="results_task2/E1b_plan.gif" width="200" height="200" alt="E1b_plan"><figcaption>E1b</figcaption></figure>
+E1a: <img src="results_task2/E1a.png" width="200" height="200" alt="E1a"><img src="results_task2/E1a_plan.gif" width="200" height="200" alt="E1a_plan">
+E1b: <img src="results_task2/E1b.png" width="200" height="200" alt="E1b"><img src="results_task2/E1b_plan.gif" width="200" height="200" alt="E1b_plan">
 
-<figure><img src="results_task2/E2a.png" width="200" height="200" alt="E2a"><img src="results_task2/E2a_plan.gif" width="200" height="200" alt="E2a_plan"><figcaption>E2a</figcaption></figure>
-<figure><img src="results_task2/E2b.png" width="200" height="200" alt="E2b"><img src="results_task2/E2b_plan.gif" width="200" height="200" alt="E2b_plan"><figcaption>E2b</figcaption></figure>
+E2a: <img src="results_task2/E2a.png" width="200" height="200" alt="E2a"><img src="results_task2/E2a_plan.gif" width="200" height="200" alt="E2a_plan">
+E2b: <img src="results_task2/E2b.png" width="200" height="200" alt="E2b"><img src="results_task2/E2b_plan.gif" width="200" height="200" alt="E2b_plan">
 
-<figure><img src="results_task2/E3a.png" width="200" height="200" alt="E3a"><img src="results_task2/E3a_plan.gif" width="200" height="200" alt="E3a_plan"><figcaption>E3a</figcaption></figure>
-<figure><img src="results_task2/E3b.png" width="200" height="200" alt="E3b"><img src="results_task2/E3b_plan.gif" width="200" height="200" alt="E3b_plan"><figcaption>E3b</figcaption></figure>
+E3a: <img src="results_task2/E3a.png" width="200" height="200" alt="E3a"><img src="results_task2/E3a_plan.gif" width="200" height="200" alt="E3a_plan">
+E3b: <img src="results_task2/E3b.png" width="200" height="200" alt="E3b"><img src="results_task2/E3b_plan.gif" width="200" height="200" alt="E3b_plan">
 
 ### Further ideas
 - The overtaking maneuver could be more safe when using a longer nominal trajectory of the other truck which would allow us to plan more ahead.
-
-
-<style>
-    figure {
-        display: inline-block;
-        margin: 0 0 5px 0;
-    }
-    figure > figcaption {
-        text-align: center;
-    }
-</style>
