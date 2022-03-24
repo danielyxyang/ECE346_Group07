@@ -145,6 +145,8 @@ D6| \| |**2**|**30**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|
 D7| \| |**3**|**30**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.981|*prep stable, init stable, overtakes with 1.8, touches other truck very shortly*
 D8| \| |**4**|**30**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |16.652|*prep stable, init stable, overtakes with 1.85, touches other truck and track border very shortly*
 D9*| \| |**4**|**35**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |0|0|0|0| \| |1|11|50| \| |15.748|*prep stable, init stable, overtakes with 1.75, does not touch other truck and track border*
+D9b| \| |**3**|**35**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |**0.05**|**0.05**|**0.05**|**0.05**| \| |1|11|50| \| |18.415|*prep stable, init instable, overtakes with 1.7*
+D9c| \| |**3**|**35**|**2**|**0.5**|0.1| \| |0 / 0|5 / 10|**3 / 6**|1 / 5| \| |**0.1**|**0.1**|**0.1**|**0.1**| \| |1|11|50| \| |35.349|*not able to overtake*
 
 base: <img src="results_task2/base.png" width="200" height="200" alt="base"><img src="results_task2/base_plan_snap.gif" width="200" height="200" alt="base_plan">
 D1: <img src="results_task2/D1.png" width="200" height="200" alt="D1"><img src="results_task2/D1_plan_snap.gif" width="200" height="200" alt="D1_plan">
@@ -161,6 +163,9 @@ D7: <img src="results_task2/D7.png" width="200" height="200" alt="D7"><img src="
 D8: <img src="results_task2/D8.png" width="200" height="200" alt="D8"><img src="results_task2/D8_plan_snap.gif" width="200" height="200" alt="D8_plan">
 D9: <img src="results_task2/D9.png" width="200" height="200" alt="D9"><img src="results_task2/D9_plan_snap.gif" width="200" height="200" alt="D9_plan">
 
+D9b: <img src="results_task2/D9b.png" width="200" height="200" alt="D9b"><img src="results_task2/D9b_plan_snap.gif" width="200" height="200" alt="D9b_plan">
+D9c: <img src="results_task2/D9c.png" width="200" height="200" alt="D9c"><img src="results_task2/D9c_plan_snap.gif" width="200" height="200" alt="D9c_plan">
+
 ### Discussion
 - `w_vel` and `w_theta` larger --> provides incentive for the truck to overtake the other truck (by allowing higher speeds), might regularize cost landscape to more efficient trajectories
 - `w_vel` and `w_theta` not too large --> prevents truck to drive too aggressively (e.g. cutting curves, overtaking too closely)
@@ -169,6 +174,7 @@ D9: <img src="results_task2/D9.png" width="200" height="200" alt="D9"><img src="
 - `w_accel` larger --> might regularize cost landscape to trajectories with less acceleration and deceleration
 - *`w_delta` larger --> might regularize cost landscape to more straight trajectories with less oscillations (??)*
 - `q2_road <> q2_obstacle` (i.e. different rates of exponential increase for road and obstacle constraints) --> might reduce oscillations when computing the trajectory
+- `sigma_*` larger --> prevents truck to overtake the other truck too aggressively, but also might prevent truck to overtake the other truck at all (since size of FRS of other truck increases)
 - One can see significant decrease in computation time when tuning the barrier function parameters. This indicates that the cost landscape is more well-behaved when using tuned barrier functions.
 
 The oscillation during initiation of the overtaking maneuver comes from the problem that in the beginning there is no explicit incentive for iLQR to find a trajectory such that the truck overtakes the other truck from the left side. Hence, the truck oscillates between overtaking from the right or left side until it gets close enough to the other truck.
