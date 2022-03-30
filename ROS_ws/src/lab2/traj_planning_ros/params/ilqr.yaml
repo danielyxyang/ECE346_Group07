@@ -4,7 +4,7 @@ length: 0.5
 
 # box constraints
 # velocity
-v_max: 1.0 # max long vel [m/s]
+v_max: 0.5 # max long vel [m/s]
 v_min: 0 #0.05 # min long vel [m/s]
 
 # steering
@@ -22,19 +22,19 @@ alat_max: 5.0
 track_file: 'outerloop_center_smooth.csv'
 track_width_R: 0.3
 track_width_L: 0.3
-track_offset: 0
+track_offset: 0.15
 
 # cost
-w_vel: 2
-w_contour: 20
-w_theta: 0
-w_accel: 0.1
-w_delta: 0.1
+w_vel: 4
+w_contour: 50
+w_theta: 5
+w_accel: 0.15
+w_delta: 0.15
 
 # parameters for barrier functions
-q1_v: 0
-q2_v: 0
-q1_road: 2
+q1_v: 1
+q2_v: 3
+q1_road: 1
 q2_road: 5
 q1_lat: 1
 q2_lat: 5
