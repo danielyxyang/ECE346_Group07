@@ -4,7 +4,7 @@ length: 0.5
 
 # box constraints
 # velocity
-v_max: 0.5 # max long vel [m/s]
+v_max: 0.8 # max long vel [m/s]
 v_min: 0 #0.05 # min long vel [m/s]
 
 # steering
@@ -26,20 +26,20 @@ track_offset: 0.15
 
 # cost
 w_vel: 4
-w_contour: 50
-w_theta: 5
+w_contour: 70
+w_theta: 2
 w_accel: 0.15
 w_delta: 0.15
 
 # parameters for barrier functions
-q1_v: 1
+q1_v: 2
 q2_v: 3
 q1_road: 1
 q2_road: 5
-q1_lat: 1
-q2_lat: 5
-q1_obs: 2
-q2_obs: 5
+q1_lat: 0
+q2_lat: 3
+q1_obs: 3
+q2_obs: 8.5
 
 # ilqr parameters
 T: 1
