@@ -1,5 +1,34 @@
 # ECE346 - Lab 2
 
+## Cost analysis
+For better understanding of the parameters, we decompose the cost function into the following terms:
+$$
+\begin{align*}
+J = \sum_{k=0}^{N-1}
+&\quad w_{vel} \cdot (\textcolor{red}{v_k}- v_{max})^2\\
+&+ w_{contour} \cdot (\textcolor{red}{p_k} - p_{ref})^2\\
+&+ w_{accel} \cdot \textcolor{red}{a_k}^2\\
+&+ w_{delta} \cdot \textcolor{red}{d_k}^2\\
+&- w_{theta} \cdot \textcolor{red}{\theta_k}\\
+\\
+&+ q_{road,1} \cdot \exp((q_{road,2}\cdot(\textcolor{red}{t_k} - w_r))|_{\geq q_{road,2}\cdot(-0.025)}^{\leq 20})\\
+&+ q_{road,1} \cdot \exp((q_{road,2}\cdot(-\textcolor{red}{t_k} - w_l))|_{\geq q_{road,2}\cdot(-0.025)}^{\leq 20})\\
+&+ \sum_{i=1}^N \gamma^i \sum_{c = 1}^{n_{circ}} q_{obs,1} \cdot \exp((q_{obs,2}\cdot (0 - \text{dist}(\textcolor{red}{\text{self}_k}[c], \text{obs}_i[c])))|_{\geq -0.2})\\
+&+ q_{vel,1} \cdot \exp(q_{vel,2}\cdot(0 - \textcolor{red}{v_k}))\\
+&+ q_{lat,1} \cdot (\exp(q_{lat,2}\cdot(\textcolor{red}{a_{lat,k}} - a_{lat,\max})) - 1)\\
+&+ q_{lat,1} \cdot (\exp(q_{lat,2}\cdot(a_{lat,\min} - \textcolor{red}{a_{lat,k}})) - 1)\\
+\end{align*}
+$$
+
+with
+- $p_k = (?) $ (i.e position on track relative to track border)
+- $t_k = \begin{pmatrix} \sin(\phi(\theta_k)) \\ -\cos(\phi(\theta_k))^T \end{pmatrix}^T \begin{pmatrix} x_k - x_{center}(\theta_k) \\ y_k - y_{center}(\theta_k)\end{pmatrix}$ (i.e. projection of difference to unit vector orthogonal to track tangent = L2-norm of difference assuming closest point corresponds to orthogonal projection on track)
+- $w_r = \text{track\_width\_R} - \frac{\text{truck\_width}}{2}$ (i.e. distance to track border on the right side)
+- $w_l = \text{track\_width\_L} - \frac{\text{truck\_width}}{2}$ (i.e. distance to track border on the left side)
+- $\text{dist}(\text{self}[c], \text{obs}_i[c]) = \left\Vert\text{self}[c].\text{center} - \text{obs}_i[c].\text{center}\right\Vert - \text{self}[c].\text{radius} - \text{obs}_i[c].\text{radius}$ (i.e. negative shortest distance between circle $\text{self}[c]$ and $\text{obs}_i[c]$)
+
+*QUESTION: Is $p_k$ and $t_k$ the same?*
+
 ## Task 1: Simulation Results
 
 ### A. Tuning of iLQR parameters
@@ -198,3 +227,19 @@ E3b: <img src="results_task2/E3b.png" width="200" height="200" alt="E3b"><img sr
 
 ### Further ideas
 - The overtaking maneuver could be more safe when using a longer nominal trajectory of the other truck which would allow us to plan more ahead.
+
+---------------
+
+## Deployment on truck
+Deploying the parameters from the simulations to the truck results into different behavior due to less accuracy, limited computation resources and more uncertainty. Major changes in the setting are
+- **Limited computation**: The Jetson is limited to 1 iLQR planning over `N = 6` steps every 0.2s. Hence, we can only replan at most 5 times per second with a time granularity of 0.2s. However, the simulation results are all based on iLQR planning over `N = 11` steps (i.e. replanning 10 times per second with a time granularity of 0.1s).
+- **Less accurate controller**: The controller seems to be less accurate in the steering angle resulting in stronger oscillations.
+
+### Parameter tuning
+The following was helpful during parameter tuning:
+- `w_theta` smaller --> prevents truck to increase velocity unboundedly (since larger weight incentivize velocity to be as large as possible)
+- `v_vel` larger and `v_max` smaller --> prevents truck to increase velocity over `v_max` (since larger weight incentivizes to be as close to `v_max` as possible)
+
+### Further ideas
+- One can increase the number of planned steps `N` for finer actions (e.g. applying steering action for `dt = 0.1` instead of `dt = 0.2` seconds) while decreasing the number of replans per second (e.g. replanning after every second step instead of after every step).
+- One can add an additional circle behind other trucks as an additional backup zone or one can use the minimum distance between any two circle centers approximating the ellipsoids of both trucks for safer overtaking.
