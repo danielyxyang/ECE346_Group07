@@ -1,4 +1,4 @@
-# ECE346 - Lab 2
+# ECE346 - Lab 3
 
 ## Task 2: Simulation Results
 
